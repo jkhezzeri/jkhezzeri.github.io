@@ -1,4 +1,4 @@
-:root, [data-theme='light'] {
+:root, [data-mode='light'] {
     --color: black;
     --main-background-color: white;
     --secondary-background-color: #f6f8fa;
@@ -6,7 +6,7 @@
     --secondary-border-color: #d8dee4;
 }
 
-[data-theme='dark'] {
+[data-mode='dark'] {
     --color: white;
     --main-background-color: #0d1117;
     --secondary-background-color: #010409;
@@ -19,6 +19,7 @@ body {
     margin: 0;
     user-select: none;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -36,8 +37,14 @@ a {
     color: inherit;
 }
 
+svg {
+    width: 30px;
+    height: 30px;
+}
+
 header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     position: fixed;
     width: 100%;
@@ -46,31 +53,65 @@ header {
     border-bottom: 2px solid var(--secondary-border-color);
 }
 
-header>img {
-    margin: 0 10px;
+#headerLeft, #headerRight {
+    display: flex;
+    align-items: center;
+}
+
+header .logo {
+    margin: 10px;
 }
 
 h1 {
     margin: 0 10px 0 0;
 }
 
-header>button {
+header button {
     background-color: transparent;
     border-width: 0;
-    width: 30px;
-    height: 30px;
-    padding: 0;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
     color: inherit;
     cursor: pointer;
-    margin: 0 10px 0 auto;
+    margin: 0 0 0 auto;
 }
 
-[data-theme='light'] header>button:hover {
+#langList {
+    display: none;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    font-size: 20px;
+    background-color: var(--secondary-background-color);
+}
+
+.lang {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.lang.selected {
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.lang:hover {
+    font-weight: bold;
+}
+
+[data-mode='light'] header #buttonMode:hover {
     color: white;
     background-color: #010409;
 }
 
-[data-theme='dark'] header>button:hover {
+[data-mode='dark'] header #buttonMode:hover {
     color: black;
     background-color: #f6f8fa;
 }
@@ -90,11 +131,6 @@ footer a {
     width: 30px;
     height: 30px;
     margin-right: 10px;
-}
-
-svg {
-    width: 30px;
-    height: 30px;
 }
 
 footer img {
