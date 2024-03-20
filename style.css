@@ -1,10 +1,28 @@
+:root, [data-theme='light'] {
+    --color: black;
+    --main-background-color: white;
+    --secondary-background-color: #f6f8fa;
+    --main-border-color: #d0d7de;
+    --secondary-border-color: #d8dee4;
+}
+
+[data-theme='dark'] {
+    --color: white;
+    --main-background-color: #0d1117;
+    --secondary-background-color: #010409;
+    --main-border-color: #30363d;
+    --secondary-border-color: #2f353c;
+}
+
 body {
+    color: var(--color);
     margin: 0;
     user-select: none;
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: var(--main-background-color);
 }
 
 img {
@@ -15,7 +33,7 @@ img {
 
 a {
     text-decoration: none;
-    color: initial;
+    color: inherit;
 }
 
 header {
@@ -24,8 +42,8 @@ header {
     position: fixed;
     width: 100%;
     height: 50px;
-    background-color: #f6f8fa;
-    border-bottom: 2px solid #d8dee4;
+    background-color: var(--secondary-background-color);
+    border-bottom: 2px solid var(--secondary-border-color);
 }
 
 header>img {
@@ -36,14 +54,35 @@ h1 {
     margin: 0 10px 0 0;
 }
 
+header>button {
+    background-color: transparent;
+    border-width: 0;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    color: inherit;
+    cursor: pointer;
+    margin: 0 10px 0 auto;
+}
+
+[data-theme='light'] header>button:hover {
+    color: white;
+    background-color: #010409;
+}
+
+[data-theme='dark'] header>button:hover {
+    color: black;
+    background-color: #f6f8fa;
+}
+
 footer {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
     height: 50px;
-    border-top: 2px solid #d8dee4;
-    background-color: #f6f8fa;
+    background-color: var(--secondary-background-color);
+    border-top: 2px solid var(--secondary-border-color);
     margin-top: auto;
 }
 
@@ -51,6 +90,11 @@ footer a {
     width: 30px;
     height: 30px;
     margin-right: 10px;
+}
+
+svg {
+    width: 30px;
+    height: 30px;
 }
 
 footer img {
