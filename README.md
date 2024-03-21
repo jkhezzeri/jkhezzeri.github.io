@@ -1,4 +1,4 @@
-# [jkhezzeri.github.io](https://jkhezzeri.github.io/) <img src="assets/logo.png" width="30" height="30" align="right">
+# [jkhezzeri.github.io](https://jkhezzeri.github.io/)
 
 A list of some projects I've made.
 
