@@ -58,7 +58,11 @@ setMode();
 
 window.addEventListener('click', function(e){
 	if (button_lang.contains(e.target)){
-        lang_list.style.display = 'flex';
+        if (lang_list.style.display == 'flex') {
+            lang_list.style.display = 'none';
+        } else {
+            lang_list.style.display = 'flex';
+        }
     }
     else {
         lang_list.style.display = 'none';
