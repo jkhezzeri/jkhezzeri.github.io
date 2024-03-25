@@ -235,3 +235,46 @@ h3 {
 .langOther {
     background-color: #ededed;
 }
+
+
+@media all and (max-width: 1200px) {
+
+    h1 {
+        width: min-content;
+        height: 50px;
+        line-height: 24px;
+        padding: 2px 0;
+        box-sizing: border-box;
+    }
+
+    .copyright>span {
+        width: min-content;
+    }
+
+    #content {
+        flex-direction: column;
+	}
+
+    .projectsType {
+        width: 100%;
+    }
+
+    .projectsType:first-of-type {
+        border-right: 0 solid var(--primary-border-color);
+    }
+    
+    .projectsType:last-of-type {
+        border-left: 0 solid var(--primary-border-color);
+    }
+
+    
+
+}
+
+
+
+
+
+
+
+

@@ -18,7 +18,7 @@ function setLang() {
         langs[0].classList.remove('selected');
         langs[1].classList.add('selected');
         text_fr.forEach(fr => {
-            fr.style.display = 'block';
+            fr.style.display = 'flex';
         });
         text_en.forEach(en => {
             en.style.display = 'none';
@@ -27,7 +27,7 @@ function setLang() {
         langs[0].classList.add('selected');
         langs[1].classList.remove('selected');
         text_en.forEach(en => {
-            en.style.display = 'block';
+            en.style.display = 'flex';
         });
         text_fr.forEach(fr => {
             fr.style.display = 'none';
