@@ -1,3 +1,4 @@
+// Constants
 
 const button_lang = document.querySelector('#buttonLang');
 const lang_list = document.querySelector('#langList');
@@ -10,8 +11,14 @@ const button_mode = document.querySelector('#buttonMode');
 
 const current_year = document.querySelectorAll('.currentYear');
 
+// Set page datas to stored datas (language and mode)
+
 document.documentElement.setAttribute('data-lang', localStorage.getItem("lang"));
 document.documentElement.setAttribute('data-mode', localStorage.getItem("mode"));
+
+// Functions
+
+// Set language
 
 function setLang() {
     if (document.documentElement.getAttribute('data-lang') == 'fr') {
@@ -35,6 +42,8 @@ function setLang() {
     }
 }
 
+// Set mode
+
 function setMode() {
     if (document.documentElement.getAttribute('data-mode') == 'dark') {
         button_mode.children[0].style.display = 'none';
@@ -51,10 +60,12 @@ function setMode() {
     }
 }
 
+// Call functions to set language and mode at launch of page
+
 setLang();
 setMode();
 
-
+// Display (or not) the language parameter
 
 window.addEventListener('click', function(e){
 	if (button_lang.contains(e.target)){
@@ -69,6 +80,8 @@ window.addEventListener('click', function(e){
     }
 });
 
+// Change language on click
+
 langs.forEach(lang => {
     lang.addEventListener('click',()=>{
         langs.forEach(l => {
@@ -81,7 +94,7 @@ langs.forEach(lang => {
     });
 });
 
-
+// Change mode on click
 
 button_mode.addEventListener('click',()=>{
     if (document.documentElement.getAttribute('data-mode') == 'dark') {
@@ -94,8 +107,13 @@ button_mode.addEventListener('click',()=>{
     setMode();
 });
 
-
+// Get and display current year
 
 current_year.forEach(year => {
     year.innerText = new Date().getFullYear();
 });
+
+
+
+
+
