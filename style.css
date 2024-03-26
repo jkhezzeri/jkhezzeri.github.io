@@ -194,7 +194,13 @@ h3 {
     margin: 0;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     color: #0969da;
+}
+
+h3 .unlink {
+    color: var(--color);
+    pointer-events: none;
 }
 
 .projectText{
