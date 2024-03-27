@@ -150,6 +150,8 @@ footer img {
     align-items: center;
 }
 
+/* Content */
+
 #content {
     padding-top: 52px;
     display: flex;    
@@ -166,8 +168,6 @@ footer img {
 .projectsType:last-of-type {
     border-left: 1px solid var(--primary-border-color);
 }
-
-/* Content */
 
 h2 {
     margin: 0;
